@@ -51,5 +51,5 @@
   * testing on middleware
 
 #### UML
-![data modeling UML](http://i.imgur.com/7v5ASc8.png)
+![data modeling UML](data-modeling.jpg)
 
