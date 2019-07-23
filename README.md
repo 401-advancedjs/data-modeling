@@ -1,30 +1,29 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 =================================================
 
-## Project Name
+## Data Modeling
 
-### Author: Student/Group Name
+### Author: Melissa Stock
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
+* [submission PR](https://github.com/401-advancedjs/data-modeling/pull/1)
+* [travis](https://www.travis-ci.com/401-advancedjs/data-modeling)
 
 #### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
+* [mongoose docs](https://mongoosejs.com/docs/middleware.html)
 
 ### Modules
-#### `modulename.js`
+#### `categories.js`
+#### `categories-schema.js`
+#### `products.js`
+#### `products-schema.js`
+
 ##### Exported Values and Methods
 
-###### `foo(thing) -> string`
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
+###### `post(entry) -> JSON object containing entry`
+###### `get(_id) -> JSON object with _id`
+###### `put(id_, entry) -> JSON object with _id containing updated entry`
+###### `delete(_id) -> deletes JSON object with _id`
 
 ### Setup
 #### `.env` requirements
@@ -32,16 +31,25 @@ Usage Notes or examples
 * `MONGODB_URI` - URL to the running mongo instance/db
 
 #### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+* `http [options: post/get/put/delete] localhost:3000`
+* Endpoint: `/categories`
+  * Returns a JSON object with all categories information in it.
+* Endpoint: `/categories/:id`
+  * Returns a JSON object with the specified category information in it.
+* Endpoint: `/products`
+  * Returns a JSON object with all products information in it.
+* Endpoint: `/products/:id`
+  * Returns a JSON object with the specified product information in it.
   
 #### Tests
-* How do you run tests?
+* How do you run tests? `npm run test`
 * What assertions were made?
+  * DB should be able to run the following commands:  get(), post(), put(), delete() on both routes
+  * DB should throw an error if it unsuccessfully runs the following commands: get(), post(), put(), delete() on both routes
 * What assertions need to be / should be made?
+  * testing on server
+  * testing on middleware
 
 #### UML
-Link to an image of the UML for your application and response to events
+![data modeling UML](data-modeling.jpg)
+
